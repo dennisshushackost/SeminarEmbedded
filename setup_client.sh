@@ -13,4 +13,5 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Deactivate the virtual environment
-python3 setups.py
+python3 setup.py install
+
