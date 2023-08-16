@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Install Screen with text:
-python3 setup.py 
-
 # Navigate to 'client' directory
-cd client
+cd server
 
 # Set up a Python virtual environment
 python3 -m venv venv

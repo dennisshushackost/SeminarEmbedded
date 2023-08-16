@@ -1,2 +1,4 @@
 PILLOW
 Adafruit_GPIO
+smbus
+RPi.GPIO
