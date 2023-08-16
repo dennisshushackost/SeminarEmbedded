@@ -2,30 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature and Humidity Data</title>
+    <title>Temperature and Humidity Monitor</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-    {% for room, entries in rooms.items() %}
-    <h2>Room {{ room }}</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Temperature (°C)</th>
-                <th>Humidity (%)</th>
-                <th>Timestamp</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for entry in entries %}
-            <tr>
-                <td>{{ entry.temperature }}</td>
-                <td>{{ entry.humidity }}</td>
-                <td>{{ entry.timestamp }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endfor %}
+
+<h2>Current Room Conditions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Room</th>
+            <th>Temperature (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for room, data in rooms.items() %}
+        <tr>
+            <td>{{ room }}</td>
+            <td>{{ data.temperature }}</td>
+            <td>{{ data.humidity }}</td>
+            <td><script>document.write(new Date({{ data.timestamp * 1000 }}).toISOString().slice(0, 19).replace("T", " "));</script></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 </body>
 </html>
