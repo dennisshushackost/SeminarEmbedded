@@ -62,6 +62,6 @@ while True:
     # Update display
     disp.image(image)
     disp.display()
-    time.sleep(1)  # Update every 2 seconds
+    time.sleep(5)  # Update every 2 seconds
     MESSAGE = f"{cTemp},{humidity},{timestamp},{room_number}".encode()
     sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
