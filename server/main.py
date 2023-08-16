@@ -20,7 +20,7 @@ class Data(db.Model):
 with app.app_context():
     db.create_all()
 
-UDP_IP = "192.168.46.66"
+UDP_IP = "0.0.0.0"
 UDP_PORT = 5005
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -56,7 +56,7 @@ def index():
 
 
 def run_flask():
-    app.run(host="192.168.46.66", port=8888)
+    app.run(host="0.0.0.0", port=8888)
     
 if __name__ == "__main__":
     # Starting Flask on a separate thread

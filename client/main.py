@@ -44,7 +44,7 @@ bottom = height-padding
 x = 0
 font = ImageFont.load_default()
 
-UDP_IP = "192.3.98.245"
+UDP_IP = "192.168.46.66"
 UDP_PORT = 5005
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
