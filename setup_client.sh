@@ -15,3 +15,4 @@ pip install -r requirements.txt
 # Deactivate the virtual environment
 python3 setup.py install
 
+python3 main.py
