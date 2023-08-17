@@ -1,0 +1,12 @@
+[Unit]
+Description=Setup Server Script Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/setup_client.sh
+Restart=no
+
+
+[Install]
+WantedBy=multi-user.target
