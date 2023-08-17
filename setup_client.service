@@ -1,12 +1,12 @@
 [Unit]
-Description=Setup Server Script Service
+Description=Setup Client Script Service
 After=network.target
 
 [Service]
-Type=simple
-ExecStart=/home/pi/setup_client.sh
-Restart=no
-
+Environment="PATH=/home/pi/SeminarEmbedded/client/venv/bin"
+ExecStart=/home/pi/SeminarEmbedded/client/venv/bin/python /home/pi/SeminarEmbedded/client/main.py
+Restart=always
+RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
