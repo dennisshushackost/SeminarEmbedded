@@ -5,6 +5,7 @@
 For the client application the following technology stack was used:
 1. Adafruit Python SSD1306 library for Using the oled screen for the pico board 
 2. Smbus for the temperture & humidty sensor
+3. The client is implemented as a system.d service. This allows it to automatically restart, whenever the pi fails. Generally it just runs it as a daemon.
 
 The client grabs the current temp & humidty every 5 seconds, displays it on the screen and sends this information to a central server via a UDP socket. Each client represents a specific room.
 
